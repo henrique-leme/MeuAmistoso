@@ -10,21 +10,21 @@ package Model;
  */
 public class Usuario {
     private int id;
-    private String Email;
-    private String Senha;
-    public String Nome;
+    private String email;
+    private String senha;
+    public String nome;
 
-    public Usuario(int id, String Email, String Senha, String Nome) {
+    public Usuario(int id, String email, String senha, String nome) {
         this.id = id;
-        this.Email = Email;
-        this.Senha = Senha;
-        this.Nome = Nome;
+        this.email = email;
+        this.senha = senha;
+        this.nome = nome;
     }
 
-    public Usuario(int id, String Email, String Senha) {
+    public Usuario(int id, String email, String senha) {
         this.id = id;
-        this.Email = Email;
-        this.Senha = Senha;
+        this.email = email;
+        this.senha = senha;
     }
 
     
@@ -38,27 +38,27 @@ public class Usuario {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
-    public void setEmail(String Email) {
-        this.Email = Email;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getSenha() {
-        return Senha;
+        return senha;
     }
 
-    public void setSenha(String Senha) {
-        this.Senha = Senha;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     public String getNome() {
-        return Nome;
+        return nome;
     }
 
-    public void setNome(String Nome) {
-        this.Nome = Nome;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
     
     
