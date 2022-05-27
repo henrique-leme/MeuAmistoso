@@ -12,27 +12,20 @@ import java.util.Date;
  */
 public class Jogos {
     private int id;
-    public String NomeDoOrganizador;
-    public String LocalDoJogo;
-    public Date DataDoJogo;
-    public int NumeroDeJogadores;
-    public String Descricao;
+    public Usuario nomeDoOrganizador;
+    public String localDoJogo;
+    public Date dataDoJogo;
+    public int numeroDeJogadores;
+    public String descricao;
 
-    public Jogos(int id, String NomeDoOrganizador, String LocalDoJogo, Date DataDoJogo, int NumeroDeJogadores, String Descricao) {
-        this.id = id;
-        this.NomeDoOrganizador = NomeDoOrganizador;
-        this.LocalDoJogo = LocalDoJogo;
-        this.DataDoJogo = DataDoJogo;
-        this.NumeroDeJogadores = NumeroDeJogadores;
-        this.Descricao = Descricao;
-    }
+    
 
-    public Jogos(int id, String NomeDoOrganizador, String LocalDoJogo, Date DataDoJogo, int NumeroDeJogadores) {
+    public Jogos(int id, Usuario nomeDoOrganizador, String localDoJogo, Date dataDoJogo, int numeroDeJogadores) {
         this.id = id;
-        this.NomeDoOrganizador = NomeDoOrganizador;
-        this.LocalDoJogo = LocalDoJogo;
-        this.DataDoJogo = DataDoJogo;
-        this.NumeroDeJogadores = NumeroDeJogadores;
+        this.nomeDoOrganizador = nomeDoOrganizador;
+        this.localDoJogo = localDoJogo;
+        this.dataDoJogo = dataDoJogo;
+        this.numeroDeJogadores = numeroDeJogadores;
     }
 
     public int getId() {
@@ -43,44 +36,44 @@ public class Jogos {
         this.id = id;
     }
 
-    public String getNomeDoOrganizador() {
-        return NomeDoOrganizador;
+    public Usuario getNomeDoOrganizador() {
+        return nomeDoOrganizador;
     }
 
-    public void setNomeDoOrganizador(String NomeDoOrganizador) {
-        this.NomeDoOrganizador = NomeDoOrganizador;
+    public void setNomeDoOrganizador(Usuario nomeDoOrganizador) {
+        this.nomeDoOrganizador = nomeDoOrganizador;
     }
 
     public String getLocalDoJogo() {
-        return LocalDoJogo;
+        return localDoJogo;
     }
 
-    public void setLocalDoJogo(String LocalDoJogo) {
-        this.LocalDoJogo = LocalDoJogo;
+    public void setLocalDoJogo(String localDoJogo) {
+        this.localDoJogo = localDoJogo;
     }
 
     public Date getDataDoJogo() {
-        return DataDoJogo;
+        return dataDoJogo;
     }
 
-    public void setDataDoJogo(Date DataDoJogo) {
-        this.DataDoJogo = DataDoJogo;
+    public void setDataDoJogo(Date dataDoJogo) {
+        this.dataDoJogo = dataDoJogo;
     }
 
     public int getNumeroDeJogadores() {
-        return NumeroDeJogadores;
+        return numeroDeJogadores;
     }
 
-    public void setNumeroDeJogadores(int NumeroDeJogadores) {
-        this.NumeroDeJogadores = NumeroDeJogadores;
+    public void setNumeroDeJogadores(int numeroDeJogadores) {
+        this.numeroDeJogadores = numeroDeJogadores;
     }
 
     public String getDescricao() {
-        return Descricao;
+        return descricao;
     }
 
-    public void setDescricao(String Descricao) {
-        this.Descricao = Descricao;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
     
     
