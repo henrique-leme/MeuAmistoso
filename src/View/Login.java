@@ -4,17 +4,27 @@
  */
 package View;
 
+import Controller.LoginController;
+import DAO.Banco;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Henrique
  */
 public class Login extends javax.swing.JFrame {
 
+    private final LoginController controller;
+
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
+        controller = new LoginController(this);
+        Banco.inicia();
     }
 
     /**
@@ -30,7 +40,7 @@ public class Login extends javax.swing.JFrame {
         jLabelUsuario = new javax.swing.JLabel();
         jLabelSenha = new javax.swing.JLabel();
         CampoSenha = new javax.swing.JPasswordField();
-        CampoUsuario = new javax.swing.JTextField();
+        CampoEmail = new javax.swing.JTextField();
         BotaoEntrar = new javax.swing.JButton();
         BotaoRegistrar = new javax.swing.JButton();
 
@@ -41,7 +51,7 @@ public class Login extends javax.swing.JFrame {
         jLabelLogin.setText(" Login");
 
         jLabelUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabelUsuario.setText("Usuario");
+        jLabelUsuario.setText("Email");
 
         jLabelSenha.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelSenha.setText("Senha");
@@ -52,9 +62,9 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        CampoUsuario.addActionListener(new java.awt.event.ActionListener() {
+        CampoEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoUsuarioActionPerformed(evt);
+                CampoEmailActionPerformed(evt);
             }
         });
 
@@ -84,7 +94,7 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap(154, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(CampoSenha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                    .addComponent(CampoUsuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                    .addComponent(CampoEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                     .addComponent(BotaoEntrar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                     .addComponent(BotaoRegistrar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabelLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -98,7 +108,7 @@ public class Login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CampoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CampoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelSenha)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -117,12 +127,15 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoSenhaActionPerformed
 
-    private void CampoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoUsuarioActionPerformed
+    private void CampoEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CampoUsuarioActionPerformed
+    }//GEN-LAST:event_CampoEmailActionPerformed
 
     private void BotaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoEntrarActionPerformed
-        // TODO add your handling code here:
+        //Quando acionado, Logar o Usuario
+        this.controller.logar();
+        System.out.println(CampoEmail.getText());
+        System.out.println(CampoSenha.getText());
     }//GEN-LAST:event_BotaoEntrarActionPerformed
 
     /**
@@ -163,10 +176,31 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoEntrar;
     private javax.swing.JButton BotaoRegistrar;
+    private javax.swing.JTextField CampoEmail;
     private javax.swing.JPasswordField CampoSenha;
-    private javax.swing.JTextField CampoUsuario;
     private javax.swing.JLabel jLabelLogin;
     private javax.swing.JLabel jLabelSenha;
     private javax.swing.JLabel jLabelUsuario;
     // End of variables declaration//GEN-END:variables
+
+    public void exibirMensagem(String mensagem) {
+        JOptionPane.showMessageDialog(null, mensagem);
+    }
+
+    public JTextField getCampoEmail() {
+        return CampoEmail;
+    }
+
+    public void setCampoEmail(JTextField CampoEmail) {
+        this.CampoEmail = CampoEmail;
+    }
+
+    public JPasswordField getCampoSenha() {
+        return CampoSenha;
+    }
+
+    public void setCampoSenha(JPasswordField CampoSenha) {
+        this.CampoSenha = CampoSenha;
+    }
+    
 }

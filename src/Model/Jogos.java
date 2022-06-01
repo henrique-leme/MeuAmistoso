@@ -4,7 +4,11 @@
  */
 package Model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,13 +22,17 @@ public class Jogos {
     public int numeroDeJogadores;
     public String descricao;
 
-    
 
-    public Jogos(int id, Usuario nomeDoOrganizador, String localDoJogo, Date dataDoJogo, int numeroDeJogadores) {
+
+    public Jogos(int id, Usuario nomeDoOrganizador, String localDoJogo, String dataDoJogo, int numeroDeJogadores) {
         this.id = id;
         this.nomeDoOrganizador = nomeDoOrganizador;
         this.localDoJogo = localDoJogo;
-        this.dataDoJogo = dataDoJogo;
+        try {
+            this.dataDoJogo = new SimpleDateFormat("dd/MM/yyyy").parse(dataDoJogo);
+        } catch (ParseException ex) {
+            Logger.getLogger(Jogos.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.numeroDeJogadores = numeroDeJogadores;
     }
 
@@ -75,6 +83,5 @@ public class Jogos {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
-    
+ 
 }
