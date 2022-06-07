@@ -13,11 +13,31 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Criar Jogo"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="BotaoCriarJogo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Criar Jogo"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoCriarJogoActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="JogosCriados">
           <Properties>
             <Property name="text" type="java.lang.String" value="Seus Jogos"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="BotaoListadeJogos">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Lista de Jogos"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoListadeJogosActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
       </SubComponents>
     </Menu>

@@ -4,9 +4,12 @@
  */
 package Controller;
 
+import DAO.UsuarioDAO;
 import Helper.LoginHelper;
 import Model.Usuario;
 import View.Login;
+import View.Registro;
+import View.TelaPrincipal;
 
 /**
  *
@@ -23,19 +26,25 @@ public class LoginController {
     }
     //Valida o Login
     public void logarNoSistema(){
-     //Pegar os dados da View
-     Usuario usuario = helper.obterModelo();
-        
-    //Verificar no Banco de Dados
+     //Pega os dados inseridos na View
+     Usuario usuario = helper.obterModelo();   
+    //Verifica no Banco de Dados
+    UsuarioDAO usuarioDAO = new UsuarioDAO();
+    Usuario usuarioAutenticado = usuarioDAO.selectPorEmailESenha(usuario);
     //Direcionar para a Tela Principal caso esteja cadastrado
-    // Mostra tela de erro por conta do usuario nao exisitr
+    if(usuarioAutenticado != null) {
+        //Enviar para TelaPrincipal
+        TelaPrincipal menu = new TelaPrincipal();
+        menu.setVisible(true);
+        this.view.dispose();
+        // Mostra tela de erro por conta do usuario nao exisitr
+    }else{
+         view.exibirMensagem("Usuário ou Senha Incorretos!");
+         }
     }
-    
-    
-    public void logar(){
-        System.out.println("Teste do Botao");
-        this.view.exibirMensagem("Botao Testado");
-        
+    public void abrirRegistro() {
+        Registro registro = new Registro();
+        registro.setVisible(true);
     }
     
 }

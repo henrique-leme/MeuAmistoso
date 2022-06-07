@@ -4,17 +4,22 @@
  */
 package View;
 
+import Controller.CriarJogoController;
+
 /**
  *
  * @author Henrique
  */
 public class CriarJogo extends javax.swing.JFrame {
 
+    private final CriarJogoController controller;
+
     /**
      * Creates new form CriarJogo
      */
     public CriarJogo() {
         initComponents();
+        controller = new CriarJogoController(this);
     }
 
     /**
@@ -39,7 +44,7 @@ public class CriarJogo extends javax.swing.JFrame {
         Descricao = new javax.swing.JTextField();
         TituloPaginaCriar = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabelNomeDoOrganizador.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelNomeDoOrganizador.setText("Nome do organizador:");

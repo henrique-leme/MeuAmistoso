@@ -4,17 +4,22 @@
  */
 package View;
 
+import Controller.TelaPrincipalController;
+
 /**
  *
  * @author Henrique
  */
 public class TelaPrincipal extends javax.swing.JFrame {
 
+    private final TelaPrincipalController controller;
+
     /**
      * Creates new form TelaPrincipal
      */
     public TelaPrincipal() {
         initComponents();
+        this.controller = new TelaPrincipalController(this);
     }
 
     /**
@@ -29,16 +34,36 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuBar1 = new javax.swing.JMenuBar();
         CriarJogo = new javax.swing.JMenu();
+        BotaoCriarJogo = new javax.swing.JMenuItem();
         JogosCriados = new javax.swing.JMenu();
+        BotaoListadeJogos = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         CriarJogo.setText("Criar Jogo");
+
+        BotaoCriarJogo.setText("Criar Jogo");
+        BotaoCriarJogo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoCriarJogoActionPerformed(evt);
+            }
+        });
+        CriarJogo.add(BotaoCriarJogo);
+
         jMenuBar1.add(CriarJogo);
 
         JogosCriados.setText("Seus Jogos");
+
+        BotaoListadeJogos.setText("Lista de Jogos");
+        BotaoListadeJogos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoListadeJogosActionPerformed(evt);
+            }
+        });
+        JogosCriados.add(BotaoListadeJogos);
+
         jMenuBar1.add(JogosCriados);
 
         setJMenuBar(jMenuBar1);
@@ -56,6 +81,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotaoCriarJogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCriarJogoActionPerformed
+        this.controller.navegarParaCriarJogo();
+    }//GEN-LAST:event_BotaoCriarJogoActionPerformed
+
+    private void BotaoListadeJogosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoListadeJogosActionPerformed
+        this.controller.navegarParaListaJogos();
+    }//GEN-LAST:event_BotaoListadeJogosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -93,6 +126,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem BotaoCriarJogo;
+    private javax.swing.JMenuItem BotaoListadeJogos;
     private javax.swing.JMenu CriarJogo;
     private javax.swing.JMenu JogosCriados;
     private javax.swing.JMenuBar jMenuBar1;

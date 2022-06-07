@@ -32,7 +32,7 @@ public class LoginHelper {
             view.getCampoSenha().setText(senha);
         
     }
-    
+    // Limpa os Campos
     public void clear(){
         view.getCampoEmail().setText("");
         view.getCampoEmail().setText("");

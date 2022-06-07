@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author tiago
+ * @author Henrique
  */
 public class JogosDAO {
     
@@ -36,14 +36,14 @@ public class JogosDAO {
     }
     
     /**
-     * Deleta um objeto do banco de dados pelo id do servico passado
+     * Deleta um objeto do banco de dados pelo id do jogo passado
      * @param jogos
      * @return 
      */
     public boolean delete(Jogos jogos){
-        for (Jogos servicoLista : Banco.jogos) {
-            if(idIguais(servicoLista,jogos)){
-                Banco.jogos.remove(servicoLista);
+        for (Jogos jogosLista : Banco.jogos) {
+            if(idIguais(jogosLista,jogos)){
+                Banco.jogos.remove(jogosLista);
                 return true;
             }
         }
@@ -51,7 +51,7 @@ public class JogosDAO {
     }
     
     /**
-     * Retorna um arraylist com todos os servicos do banco de dados
+     * Retorna um arraylist com todos os jogos do banco de dados
      * @return uma lista com todos os registros do banco
      */
     public ArrayList<Jogos> selectAll(){

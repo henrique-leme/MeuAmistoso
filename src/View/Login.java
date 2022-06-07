@@ -6,6 +6,7 @@ package View;
 
 import Controller.LoginController;
 import DAO.Banco;
+import Model.Usuario;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -76,6 +77,11 @@ public class Login extends javax.swing.JFrame {
         });
 
         BotaoRegistrar.setText("Registrar");
+        BotaoRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoRegistrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -133,10 +139,14 @@ public class Login extends javax.swing.JFrame {
 
     private void BotaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoEntrarActionPerformed
         //Quando acionado, Logar o Usuario
-        this.controller.logar();
-        System.out.println(CampoEmail.getText());
-        System.out.println(CampoSenha.getText());
+        this.controller.logarNoSistema();
+        //Mostra os dados passados nos campos para login
+        
     }//GEN-LAST:event_BotaoEntrarActionPerformed
+
+    private void BotaoRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoRegistrarActionPerformed
+        this.controller.abrirRegistro();        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoRegistrarActionPerformed
 
     /**
      * @param args the command line arguments

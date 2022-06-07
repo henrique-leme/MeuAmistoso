@@ -29,8 +29,13 @@ public class Banco {
         
         //criando elementos
         
-        Usuario usuario1 = new Usuario(1, "teste@teste", "12345678");
-        Usuario usuario2 = new Usuario(2, "teste2@teste", "12345678", "Joaozinho");
+        Usuario usuario1 = new Usuario(1, "1", "12345678");
+        Usuario usuario2 = new Usuario(2, "2", "12345678");
+        Usuario usuario3 = new Usuario(3, "3", "12345678");
+        Usuario usuario4 = new Usuario(4, "4", "12345678");
+        Usuario usuario5 = new Usuario(5, "5", "12345678");
+        
+        Usuario usuario6 = new Usuario(6, "teste2@teste", "12345678", "Joaozinho");
          
         
         Jogos jogos1 = new Jogos(2, usuario2, "Local Ficticio", "12/10/2022", 12);

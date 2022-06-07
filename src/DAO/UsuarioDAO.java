@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package DAO;
 
 import Model.Usuario;
@@ -10,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author tiago
+ * @author Henrique
  */
 public class UsuarioDAO {
     
@@ -83,7 +78,7 @@ public class UsuarioDAO {
      * @return verdadeiro caso sejam iguais e falso caso nao forem iguais
      */
     private boolean emailESenhaSaoIguais(Usuario usuario, Usuario usuarioAPesquisar) {
-        return usuario.getNome().equals(usuarioAPesquisar.getNome()) && usuario.getSenha().equals(usuarioAPesquisar.getSenha());
+        return usuario.getEmail().equals(usuarioAPesquisar.getEmail()) && usuario.getSenha().equals(usuarioAPesquisar.getSenha());
     }
 
     /**

@@ -63,6 +63,10 @@ public class Jogos {
     public Date getDataDoJogo() {
         return dataDoJogo;
     }
+    
+    public String getDataFormatada(){
+    return new SimpleDateFormat("dd/MM/yyyy").format(dataDoJogo);
+    }
 
     public void setDataDoJogo(Date dataDoJogo) {
         this.dataDoJogo = dataDoJogo;
