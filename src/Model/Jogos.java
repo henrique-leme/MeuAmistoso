@@ -16,15 +16,15 @@ import java.util.logging.Logger;
  */
 public class Jogos {
     private int id;
-    public Usuario nomeDoOrganizador;
+    public String nomeDoOrganizador;
     public String localDoJogo;
     public Date dataDoJogo;
     public int numeroDeJogadores;
     public String descricao;
 
 
-
-    public Jogos(int id, Usuario nomeDoOrganizador, String localDoJogo, String dataDoJogo, int numeroDeJogadores) {
+//Cria construtor com todos os parametros, mas sem descricao
+    public Jogos(int id, String nomeDoOrganizador, String localDoJogo, String dataDoJogo, int numeroDeJogadores ) {
         this.id = id;
         this.nomeDoOrganizador = nomeDoOrganizador;
         this.localDoJogo = localDoJogo;
@@ -33,8 +33,22 @@ public class Jogos {
         } catch (ParseException ex) {
             Logger.getLogger(Jogos.class.getName()).log(Level.SEVERE, null, ex);
         }
-        this.numeroDeJogadores = numeroDeJogadores;
+        this.numeroDeJogadores = numeroDeJogadores;   
     }
+//Cria construtor com todos os parametros e a descricao
+    public Jogos(int id, String nomeDoOrganizador, String localDoJogo, String dataDoJogo, int numeroDeJogadores, String descricao) {
+    this.id = id;
+        this.nomeDoOrganizador = nomeDoOrganizador;
+        this.localDoJogo = localDoJogo;
+        try {
+            this.dataDoJogo = new SimpleDateFormat("dd/MM/yyyy").parse(dataDoJogo);
+        } catch (ParseException ex) {
+            Logger.getLogger(Jogos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.numeroDeJogadores = numeroDeJogadores;
+        this.descricao = descricao;
+    }
+    
 
     public int getId() {
         return id;
@@ -44,11 +58,11 @@ public class Jogos {
         this.id = id;
     }
 
-    public Usuario getNomeDoOrganizador() {
+    public String getNomeDoOrganizador() {
         return nomeDoOrganizador;
     }
 
-    public void setNomeDoOrganizador(Usuario nomeDoOrganizador) {
+    public void setNomeDoOrganizador(String nomeDoOrganizador) {
         this.nomeDoOrganizador = nomeDoOrganizador;
     }
 

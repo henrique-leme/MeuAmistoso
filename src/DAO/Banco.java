@@ -34,11 +34,9 @@ public class Banco {
         Usuario usuario3 = new Usuario(3, "3", "12345678");
         Usuario usuario4 = new Usuario(4, "4", "12345678");
         Usuario usuario5 = new Usuario(5, "5", "12345678");
-        
-        Usuario usuario6 = new Usuario(6, "teste2@teste", "12345678", "Joaozinho");
          
         
-        Jogos jogos1 = new Jogos(2, usuario2, "Local Ficticio", "12/10/2022", 12);
+        Jogos jogos1 = new Jogos(2, "Usuario2", "Local Ficticio", "12/10/2022", 12, "Descricao Teste");
         
 
    
@@ -46,6 +44,9 @@ public class Banco {
         //Adiciona Elementos na lista
         usuario.add(usuario1);
         usuario.add(usuario2);
+        usuario.add(usuario3);
+        usuario.add(usuario4);
+        usuario.add(usuario5);
         
         
         

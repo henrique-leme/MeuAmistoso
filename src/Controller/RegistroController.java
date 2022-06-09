@@ -27,7 +27,6 @@ public class RegistroController {
     //Pega os dados inseridos na View
      Usuario usuario = helper.obterDados();
     // Inseri um novo usuario com o model
-     UsuarioDAO usuarioDAO = new UsuarioDAO();
-    Usuario registrarUsuario = usuarioDAO.insert(usuario);   
+     new UsuarioDAO().insert(usuario);
     }
 }
