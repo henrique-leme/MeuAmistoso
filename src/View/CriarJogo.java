@@ -5,6 +5,7 @@
 package View;
 
 import Controller.CriarJogoController;
+import javax.swing.JTextField;
 
 /**
  *
@@ -20,6 +21,7 @@ public class CriarJogo extends javax.swing.JFrame {
     public CriarJogo() {
         initComponents();
         controller = new CriarJogoController(this);
+        
     }
 
     /**
@@ -37,12 +39,14 @@ public class CriarJogo extends javax.swing.JFrame {
         jLabelNumerodeJogadores = new javax.swing.JLabel();
         jLabelDescricao = new javax.swing.JLabel();
         BotaoSalvar = new javax.swing.JButton();
+        IdJogo = new javax.swing.JTextField();
         NomeDoOrganizador = new javax.swing.JTextField();
         LocalDoJogo = new javax.swing.JTextField();
         DataDoJogo = new javax.swing.JTextField();
         NumeroDeJogadores = new javax.swing.JTextField();
         Descricao = new javax.swing.JTextField();
         TituloPaginaCriar = new javax.swing.JLabel();
+        jLabelId = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -69,6 +73,13 @@ public class CriarJogo extends javax.swing.JFrame {
             }
         });
 
+        IdJogo.setText("0");
+        IdJogo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IdJogoActionPerformed(evt);
+            }
+        });
+
         LocalDoJogo.setPreferredSize(new java.awt.Dimension(185, 40));
         LocalDoJogo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,53 +94,67 @@ public class CriarJogo extends javax.swing.JFrame {
         TituloPaginaCriar.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         TituloPaginaCriar.setText("Crie o seu Amistoso");
 
+        jLabelId.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabelId.setText("Id do Jogo");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelNumerodeJogadores)
-                        .addGap(18, 18, 18)
-                        .addComponent(NumeroDeJogadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelNomeDoOrganizador)
-                            .addComponent(jLabelLocalDoJogo)
-                            .addComponent(jLabelDataDoJogo))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(DataDoJogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LocalDoJogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NomeDoOrganizador, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelDescricao)
-                    .addComponent(BotaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Descricao, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(60, 60, 60))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(52, 52, 52)
-                .addComponent(TituloPaginaCriar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabelNumerodeJogadores)
+                                .addGap(18, 18, 18)
+                                .addComponent(NumeroDeJogadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelNomeDoOrganizador)
+                                    .addComponent(jLabelLocalDoJogo)
+                                    .addComponent(jLabelDataDoJogo)
+                                    .addComponent(jLabelId, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(DataDoJogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(LocalDoJogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(NomeDoOrganizador)
+                                    .addComponent(IdJogo))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelDescricao)
+                            .addComponent(BotaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Descricao, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(60, 60, 60))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(TituloPaginaCriar)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(30, 30, 30)
+                .addComponent(TituloPaginaCriar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(29, 29, 29)
                         .addComponent(jLabelDescricao)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Descricao, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(BotaoSalvar))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(TituloPaginaCriar)
-                        .addGap(69, 69, 69)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabelId, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(24, 24, 24))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(IdJogo)
+                                .addGap(18, 18, 18)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelNomeDoOrganizador)
                             .addComponent(NomeDoOrganizador, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -152,12 +177,17 @@ public class CriarJogo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSalvarActionPerformed
-        // TODO add your handling code here:
+      this.controller.CriarJogo();
+        System.out.println("Teste");
     }//GEN-LAST:event_BotaoSalvarActionPerformed
 
     private void LocalDoJogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LocalDoJogoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LocalDoJogoActionPerformed
+
+    private void IdJogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdJogoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IdJogoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,14 +228,65 @@ public class CriarJogo extends javax.swing.JFrame {
     private javax.swing.JButton BotaoSalvar;
     private javax.swing.JTextField DataDoJogo;
     private javax.swing.JTextField Descricao;
+    private javax.swing.JTextField IdJogo;
     private javax.swing.JTextField LocalDoJogo;
     private javax.swing.JTextField NomeDoOrganizador;
     private javax.swing.JTextField NumeroDeJogadores;
     private javax.swing.JLabel TituloPaginaCriar;
     private javax.swing.JLabel jLabelDataDoJogo;
     private javax.swing.JLabel jLabelDescricao;
+    private javax.swing.JLabel jLabelId;
     private javax.swing.JLabel jLabelLocalDoJogo;
     private javax.swing.JLabel jLabelNomeDoOrganizador;
     private javax.swing.JLabel jLabelNumerodeJogadores;
     // End of variables declaration//GEN-END:variables
+
+    public JTextField getDataDoJogo() {
+        return DataDoJogo;
+    }
+
+    public void setDataDoJogo(JTextField DataDoJogo) {
+        this.DataDoJogo = DataDoJogo;
+    }
+
+    public JTextField getDescricao() {
+        return Descricao;
+    }
+
+    public void setDescricao(JTextField Descricao) {
+        this.Descricao = Descricao;
+    }
+
+    public JTextField getLocalDoJogo() {
+        return LocalDoJogo;
+    }
+
+    public void setLocalDoJogo(JTextField LocalDoJogo) {
+        this.LocalDoJogo = LocalDoJogo;
+    }
+
+    public JTextField getNomeDoOrganizador() {
+        return NomeDoOrganizador;
+    }
+
+    public void setNomeDoOrganizador(JTextField NomeDoOrganizador) {
+        this.NomeDoOrganizador = NomeDoOrganizador;
+    }
+
+    public JTextField getNumeroDeJogadores() {
+        return NumeroDeJogadores;
+    }
+
+    public void setNumeroDeJogadores(JTextField NumeroDeJogadores) {
+        this.NumeroDeJogadores = NumeroDeJogadores;
+    }
+
+    public JTextField getIdJogo() {
+        return IdJogo;
+    }
+
+    public void setIdJogo(JTextField IdJogo) {
+        this.IdJogo = IdJogo;
+    }
+
 }

@@ -22,6 +22,7 @@ public class ListaJogos extends javax.swing.JFrame {
         initComponents();
         controller = new ListaJogosController(this);
         iniciar();
+        Banco.inicia();
     }
 
     /**

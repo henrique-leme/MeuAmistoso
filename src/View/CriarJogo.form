@@ -24,48 +24,56 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabelNumerodeJogadores" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="NumeroDeJogadores" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabelNomeDoOrganizador" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabelLocalDoJogo" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabelDataDoJogo" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="DataDoJogo" min="-2" max="-2" attributes="0"/>
-                          <Component id="LocalDoJogo" min="-2" max="-2" attributes="0"/>
-                          <Component id="NomeDoOrganizador" min="-2" pref="185" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-              <EmptySpace pref="90" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabelDescricao" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="BotaoSalvar" min="-2" pref="316" max="-2" attributes="0"/>
-                  <Component id="Descricao" min="-2" pref="316" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-              <Component id="TituloPaginaCriar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabelNumerodeJogadores" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="NumeroDeJogadores" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabelNomeDoOrganizador" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelLocalDoJogo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelDataDoJogo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelId" alignment="0" min="-2" pref="116" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="DataDoJogo" max="32767" attributes="0"/>
+                                  <Component id="LocalDoJogo" max="32767" attributes="0"/>
+                                  <Component id="NomeDoOrganizador" max="32767" attributes="0"/>
+                                  <Component id="IdJogo" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="90" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelDescricao" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="BotaoSalvar" min="-2" pref="316" max="-2" attributes="0"/>
+                          <Component id="Descricao" min="-2" pref="316" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="TituloPaginaCriar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <Component id="TituloPaginaCriar" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Component id="jLabelDescricao" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="Descricao" min="-2" pref="175" max="-2" attributes="0"/>
@@ -73,9 +81,17 @@
                       <Component id="BotaoSalvar" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="TituloPaginaCriar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jLabelId" min="-2" pref="33" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="IdJogo" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabelNomeDoOrganizador" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="NomeDoOrganizador" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
@@ -154,6 +170,14 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoSalvarActionPerformed"/>
       </Events>
     </Component>
+    <Component class="javax.swing.JTextField" name="IdJogo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IdJogoActionPerformed"/>
+      </Events>
+    </Component>
     <Component class="javax.swing.JTextField" name="NomeDoOrganizador">
     </Component>
     <Component class="javax.swing.JTextField" name="LocalDoJogo">
@@ -188,6 +212,14 @@
           <Font name="Segoe UI" size="48" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Crie o seu Amistoso"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelId">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Id do Jogo"/>
       </Properties>
     </Component>
   </SubComponents>
